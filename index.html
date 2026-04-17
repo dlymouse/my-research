@@ -1,10 +1,198 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Deep Learning Research</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Learning Research Log</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #1a1d23;
+            --muted: #5c6470;
+            --paper: #f6f2ea;
+            --accent: #0f6b8e;
+            --accent-2: #b44c32;
+            --glass: rgba(255, 255, 255, 0.75);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "IBM Plex Sans", "Segoe UI", Tahoma, sans-serif;
+            color: var(--ink);
+            min-height: 100vh;
+            background: radial-gradient(1200px 800px at 10% 10%, #f4d4b1 0%, rgba(244, 212, 177, 0) 55%),
+                radial-gradient(900px 700px at 80% 0%, #c4e7f2 0%, rgba(196, 231, 242, 0) 50%),
+                linear-gradient(160deg, #fef8f0 0%, #f5eee4 40%, #e9edf1 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 48px 20px;
+        }
+
+        .page {
+            width: min(980px, 100%);
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            box-shadow: 0 30px 80px rgba(20, 24, 31, 0.18);
+            border-radius: 28px;
+            overflow: hidden;
+            backdrop-filter: blur(18px);
+            animation: floatIn 800ms ease-out;
+        }
+
+        header {
+            padding: 40px 48px 20px;
+            display: grid;
+            gap: 18px;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        h1 {
+            font-family: "Fraunces", "Times New Roman", serif;
+            font-size: clamp(32px, 6vw, 52px);
+            font-weight: 700;
+            line-height: 1.05;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--muted);
+            max-width: 520px;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            padding: 24px 48px 48px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 18px;
+            padding: 20px 22px;
+            box-shadow: 0 16px 40px rgba(22, 27, 38, 0.12);
+            display: grid;
+            gap: 10px;
+            animation: rise 700ms ease both;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 120ms;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 220ms;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .card-text {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-2);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .footer {
+            padding: 0 48px 40px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        @keyframes floatIn {
+            from {
+                opacity: 0;
+                transform: translateY(24px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 720px) {
+            header,
+            .content,
+            .footer {
+                padding-left: 28px;
+                padding-right: 28px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, Deep Learning!</h1>
-    <p>This is my first academic homepage.</p>
+    <main class="page">
+        <header>
+            <span class="eyebrow">Research Journal</span>
+            <h1>Deep Learning Study Log</h1>
+            <p class="subtitle">
+                A calm, focused space to track papers, experiments, and insights as I build my
+                deep learning toolkit.
+            </p>
+        </header>
+
+        <section class="content">
+            <article class="card">
+                <p class="card-title">Current Focus</p>
+                <p class="card-text">Representation learning, modern CNN baselines, and evaluation protocols.</p>
+                <span class="highlight">Reading: Apr 2026</span>
+            </article>
+            <article class="card">
+                <p class="card-title">Weekly Experiments</p>
+                <p class="card-text">Short notes on datasets, hyperparameters, and what actually worked.</p>
+                <span class="highlight">Notebook-ready</span>
+            </article>
+            <article class="card">
+                <p class="card-title">Next Milestones</p>
+                <p class="card-text">Finish the vision transformer survey and replicate one new baseline.</p>
+                <span class="highlight">Target: May</span>
+            </article>
+        </section>
+
+        <div class="footer">
+            Open questions, summaries, and references will live here soon.
+        </div>
+    </main>
 </body>
 </html>
